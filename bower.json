@@ -1,0 +1,22 @@
+{
+  "name": "empiredirectory.net web interface",
+  "version": "0.0.0",
+  "authors": [
+    "Fernando L. Canizo (aka conan) <conan@muriandre.com>"
+  ],
+  "description": "A nice web UI for text game running at empiredirectory.net",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "http://demos.muriandre.com/empiredirectory.net/",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootswatch-dist": "3.3.0-cyborg"
+  }
+}
