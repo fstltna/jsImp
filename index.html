@@ -50,8 +50,8 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Server <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Open Connection</a></li>
-								<li><a href="#">Close Connection</a></li>
+								<li><a href="javascript:HtmlTerm.Connect();">Open Connection</a></li>
+								<li><a href="javascript:HtmlTerm.Disconnect();">Close Connection</a></li>
 							</ul>
 						</li>
 
@@ -90,21 +90,20 @@
 		</nav>
 
 		<div class="container">
+			<div class="row">
+				<div class="col-lg-2"></div>
+				<div class="col-lg-6 text-center">
+					<div id="HtmlTermContainer"></div> 
+				</div>
+				<div class="col-lg-4"></div>
+			</div>
 
-<!-- Main component for a primary marketing message or call to action -->
-<div class="jumbotron">
-<h1>Navbar example</h1>
-<p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-<p>To see the difference between static and fixed top navbars, just scroll.</p>
-<p>
-<a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-</p>
-</div>
-
-</div><!-- container -->
+		</div><!-- container -->
 
 
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="bower_components/bootswatch-dist/js/bootstrap.min.js"></script>
+		<script src="bower_components/HtmlTerm/Release/HtmlTerm.js"></script>
+		<script src="js/htmlterm.settings.js"></script>
 	</body>
 </html>
