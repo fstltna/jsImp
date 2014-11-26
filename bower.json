@@ -17,6 +17,7 @@
     "tests"
   ],
   "dependencies": {
-    "bootswatch-dist": "3.3.0-cyborg"
+    "bootswatch-dist": "3.3.0-cyborg",
+    "HtmlTerm": "https://github.com/rickparrish/HtmlTerm.git"
   }
 }
