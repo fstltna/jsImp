@@ -88,6 +88,8 @@ $('#menuConnect').on('click', function () {
 		return;
 	}
 
+	Crt.LocalEcho = true; // echo what's typed in terminal
+
 	HtmlTerm.Connect();
 });
 
