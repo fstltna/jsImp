@@ -137,7 +137,7 @@ $('#menuSettings').on('click', function () {
 
 
 // Help menu
-$('#menuHelp').on('click', function () {
+$('#menuIndex').on('click', function () {
 	console.log(this); // TODO remove this when this stub gets implemented
 });
 
