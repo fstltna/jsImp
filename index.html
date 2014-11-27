@@ -16,6 +16,13 @@
 		<link rel="stylesheet" href="bower_components/bootswatch-dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
 
+		<SCRIPT language="JavaScript">
+		function newAboutWindow()
+		{
+			window.open ('aboutwindow.html', 'aboutwindow', config='height=280, width=500, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no');
+		}
+		</SCRIPT>
+
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -81,7 +88,7 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Help <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="#">Index</a></li>
-								<li><a href="#">About</a></li>
+								<li><a href="javascript:newAboutWindow()">About</a></li>
 							</ul>
 						</li>
 					</ul>
