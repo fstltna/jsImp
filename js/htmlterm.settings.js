@@ -50,3 +50,93 @@ HtmlTerm.ProxyPort = 4321;
 // HtmlTerm.StatusBar = true;
 
 // HtmlTerm settings ends
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Stubs for future functionality
+////////////////////////////////////////////////////////////////////////////////
+
+// File menu
+$('#menuOpenDb').on('click', function () {
+	console.log(this); // TODO remove this when this stub gets implemented
+});
+
+$('#menuCloseDb').on('click', function () {
+	console.log(this); // TODO remove this when this stub gets implemented
+});
+
+$('#menuSaveDb').on('click', function () {
+	console.log(this); // TODO remove this when this stub gets implemented
+});
+
+$('#menuNewDb').on('click', function () {
+	console.log(this); // TODO remove this when this stub gets implemented
+});
+
+
+// Server menu
+$('#menuConnect').on('click', function () {
+	// hide splash screen and show terminal emulator
+	$('#splashScreen').addClass('hidden');
+	$('#HtmlTermContainer').removeClass('hidden');
+
+	if(! HtmlTerm.Init("HtmlTermContainer")) {
+		// If we get here, it means HtmlTerm failed to load, so we'll pop up an error message.
+		// The HtmlTermContainer element above will also be replaced with an error message, so it's not totally
+		// necessary to pop up an error message here.
+		alert("Sorry, I wasn't able to load HtmlTerm\n\nTry again with an HTML5 capable browser.");
+		return;
+	}
+
+	HtmlTerm.Connect();
+});
+
+$('#menuDisconnect').on('click', function () {
+	HtmlTerm.Disconnect();
+});
+
+
+// View menu
+$('#menuMap').on('click', function () {
+	console.log(this); // TODO remove this when this stub gets implemented
+});
+
+$('#menuPlanet').on('click', function () {
+	console.log(this); // TODO remove this when this stub gets implemented
+});
+
+$('#menuShip').on('click', function () {
+	console.log(this); // TODO remove this when this stub gets implemented
+});
+
+$('#menuScripts').on('click', function () {
+	console.log(this); // TODO remove this when this stub gets implemented
+});
+
+$('#menuCommands').on('click', function () {
+	console.log(this); // TODO remove this when this stub gets implemented
+});
+
+$('#menuClearDisplay').on('click', function () {
+	console.log(this); // TODO remove this when this stub gets implemented
+});
+
+
+// Configure menu
+$('#menuHost').on('click', function () {
+	console.log(this); // TODO remove this when this stub gets implemented
+});
+
+$('#menuSettings').on('click', function () {
+	console.log(this); // TODO remove this when this stub gets implemented
+});
+
+
+// Help menu
+$('#menuHelp').on('click', function () {
+	console.log(this); // TODO remove this when this stub gets implemented
+});
+
+$('#menuAbout').on('click', function () {
+	console.log(this); // TODO remove this when this stub gets implemented
+});
