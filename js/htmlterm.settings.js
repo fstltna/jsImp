@@ -92,6 +92,10 @@ $('#menuConnect').on('click', function () {
 });
 
 $('#menuDisconnect').on('click', function () {
+	// restore splash screen and hide terminal emulator
+	$('#HtmlTermContainer').addClass('hidden');
+	$('#splashScreen').removeClass('hidden');
+
 	HtmlTerm.Disconnect();
 });
 
