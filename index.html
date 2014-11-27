@@ -40,30 +40,30 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">File <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Open DB</a></li>
-								<li><a href="#">Close DB</a></li>
-								<li><a href="#">Save DB</a></li>
-								<li><a href="#">New DB</a></li>
+								<li><a href="#" id="menuOpenDb">Open DB</a></li>
+								<li><a href="#" id="menuCloseDb">Close DB</a></li>
+								<li><a href="#" id="menuSaveDb">Save DB</a></li>
+								<li><a href="#" id="menuNewDb">New DB</a></li>
 							</ul>
 						</li>
 
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Server <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="javascript:HtmlTerm.Connect();">Open Connection</a></li>
-								<li><a href="javascript:HtmlTerm.Disconnect();">Close Connection</a></li>
+								<li><a href="#" id="menuConnect">Open Connection</a></li>
+								<li><a href="#" id="menuDisconnect">Close Connection</a></li>
 							</ul>
 						</li>
 
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">View <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Map</a></li>
-								<li><a href="#">Planet</a></li>
-								<li><a href="#">Ship</a></li>
-								<li><a href="#">Scripts</a></li>
-								<li><a href="#">Commands</a></li>
-								<li><a href="#">Clear Display</a></li>
+								<li><a href="#" id="menuMap">Map</a></li>
+								<li><a href="#" id="menuPlanet">Planet</a></li>
+								<li><a href="#" id="menuShip">Ship</a></li>
+								<li><a href="#" id="menuScripts">Scripts</a></li>
+								<li><a href="#" id="menuCommands">Commands</a></li>
+								<li><a href="#" id="menuClearDisplay">Clear Display</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -72,16 +72,16 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Configure <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Host</a></li>
-								<li><a href="#">Settings</a></li>
+								<li><a href="#" id="menuHost">Host</a></li>
+								<li><a href="#" id="menuSettings">Settings</a></li>
 							</ul>
 						</li>
 
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Help <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Index</a></li>
-								<li><a href="#">About</a></li>
+								<li><a href="#" id="menuHelp">Index</a></li>
+								<li><a href="#" id="menuAbout">About</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -93,7 +93,8 @@
 			<div class="row">
 				<div class="col-lg-2"></div>
 				<div class="col-lg-6 text-center">
-					<div id="HtmlTermContainer"></div> 
+					<img src="img/logo-768x768.png" id="splashScreen"></img>
+					<div id="HtmlTermContainer" class="hidden"></div>
 				</div>
 				<div class="col-lg-4"></div>
 			</div>
@@ -104,6 +105,7 @@
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="bower_components/bootswatch-dist/js/bootstrap.min.js"></script>
 		<script src="bower_components/HtmlTerm/Release/HtmlTerm.js"></script>
+		<script src="bower_components/HtmlTerm/Release/HtmlTerm.font-437.js"></script>
 		<script src="js/htmlterm.settings.js"></script>
 	</body>
 </html>
