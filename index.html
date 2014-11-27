@@ -72,16 +72,16 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Configure <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#" id="menuHost">Host</a></li>
-								<li><a href="#" id="menuSettings">Settings</a></li>
+								<li><a href="#" id="menuHost" data-toggle="modal" data-target="#modalHost">Host</a></li>
+								<li><a href="#" id="menuSettings" data-toggle="modal" data-target="#modalSettings">Settings</a></li>
 							</ul>
 						</li>
 
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Help <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#" id="menuHelp">Index</a></li>
-								<li><a href="#" id="menuAbout">About</a></li>
+								<li><a href="#" id="menuIndex" data-toggle="modal" data-target="#modalIndex">Index</a></li>
+								<li><a href="#" id="menuAbout" data-toggle="modal" data-target="#modalAbout">About</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -97,6 +97,77 @@
 					<div id="HtmlTermContainer" class="hidden"></div>
 				</div>
 				<div class="col-lg-4"></div>
+			</div>
+
+
+			<div class="modal fade" id="modalHost" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+							<h4 class="modal-title">Host</h4>
+						</div>
+						<div class="modal-body">
+							<p>&hellip;</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="modal fade" id="modalSettings" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+							<h4 class="modal-title">Settings</h4>
+						</div>
+						<div class="modal-body">
+							<p>&hellip;</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="modal fade" id="modalIndex" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+							<h4 class="modal-title">Help Index</h4>
+						</div>
+						<div class="modal-body">
+							<p>&hellip;</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal fade" id="modalAbout" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+							<h4 class="modal-title">About Imperium Web UI</h4>
+						</div>
+						<div class="modal-body">
+							<p>Imperium web user interface.</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
 			</div>
 
 		</div><!-- container -->
