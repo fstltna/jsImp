@@ -19,6 +19,7 @@
   "dependencies": {
     "bootswatch-dist": "3.3.0-cyborg",
     "HtmlTerm": "https://github.com/rickparrish/HtmlTerm.git",
-    "howler.js": "https://github.com/goldfire/howler.js.git#~1.1.25"
+    "howler.js": "https://github.com/goldfire/howler.js.git#~1.1.25",
+    "howler": "~1.1.25"
   }
 }
