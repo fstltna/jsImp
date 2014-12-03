@@ -1,3 +1,8 @@
 body {
 	padding-top: 70px;
 }
+
+.centeredImage {
+	margin: 0 auto;
+	display: block;
+}
