@@ -16,7 +16,6 @@ mg.getUniqueId = function () {
 
 
 mg.buildDbSelect = function () {
-	console.log('building db select');
 	// start clean
 	$('#selectDb').empty().append($('<option value="null">...</option>'));
 
