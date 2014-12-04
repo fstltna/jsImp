@@ -208,6 +208,29 @@ $('#selectDb').on('change', function () {
 });
 
 
+$('#menuMap').on('click', function () {
+	$('#windowMap').removeClass('hidden');
+});
+
+
+$('#menuPlanet').on('click', function () {
+	$('#windowPlanet').removeClass('hidden');
+});
+
+
+$('#menuShip').on('click', function () {
+	$('#windowShip').removeClass('hidden');
+});
+
+$('#menuScripts').on('click', function () {
+	$('#windowScripts').removeClass('hidden');
+});
+
+$('#menuCommands').on('click', function () {
+	$('#windowCommands').removeClass('hidden');
+});
+
+
 ////////////////////////////////////////////////////////////////////////////////
 // main
 ////////////////////////////////////////////////////////////////////////////////
