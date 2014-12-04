@@ -57,7 +57,7 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">File <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#" id="menuOpenDb">Open DB</a></li>
+								<li><a href="#" id="menuOpenDb" data-toggle="modal" data-target="#modalOpenDb">Open DB</a></li>
 								<li><a href="#" id="menuCloseDb">Close DB</a></li>
 								<li><a href="#" id="menuSaveDb">Save DB</a></li>
 								<li><a href="#" id="menuNewDb">New DB</a></li>
@@ -114,6 +114,30 @@
 				</div>
 			</div>
 
+			<div class="modal fade" id="modalOpenDb" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+							<h4 class="modal-title">Open DB</h4>
+						</div>
+						<div class="modal-body">
+							<form role="form">
+								<label for="selectDb">Choose DB to open</label>
+								<select id="selectDb" class="form-control">
+									<option value="null">...</option>
+								</select>
+							</form>
+
+						</div>
+						<div class="modal-footer">
+							<p class="hidden" id="openDbModalStatus"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
 
 			<div class="modal fade" id="modalHost" role="dialog">
 				<div class="modal-dialog">
@@ -149,12 +173,12 @@
 									<input type="text" class="form-control" id="iGame">
 								</div>
 
-								<button type="submit" class="btn btn-primary col-lg-12">Submit</button>
+								<button type="submit" id="submitHost" class="btn btn-primary col-lg-12">Submit</button>
 							</form>
 
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<p class="hidden" id="hostModalStatus"></p>
 						</div>
 					</div>
 				</div>
@@ -223,6 +247,7 @@
 
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="bower_components/bootswatch-dist/js/bootstrap.min.js"></script>
+		<script src="bower_components/localforage/dist/localforage.min.js"></script>
 		<script src="bower_components/fTelnet/release/ftelnet.min.js" id="fTelnetScript"></script>
 		<script src="js/htmlterm.settings.js"></script>
 	</body>

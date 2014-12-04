@@ -2,6 +2,13 @@
 var mg = {}; // Marisa Giancarla namespace to avoid collisions
 
 
+mg.getUniqueId = function () {
+	var time = new Date().getTime();
+	while(time === new Date().getTime());
+	return new Date().getTime();
+}
+
+
 ////////////////////////////////////////////////////////////////////////////////
 // fTelnet settings
 ////////////////////////////////////////////////////////////////////////////////
@@ -122,4 +129,65 @@ $('#menuIndex').on('click', function () {
 
 $('#menuAbout').on('click', function () {
 	console.log(this); // TODO remove this when this stub gets implemented
+});
+
+$('#submitHost').on('click', function (e) {
+	e.preventDefault();
+
+	var data = {
+		serverName: $('#iServerName').val(),
+		port: $('#iPort').val(),
+		playerName: $('#iPlayerName').val(),
+		password: $('#iPassword').val(),
+		gameDescription: $('#iGame').val()
+	};
+
+	var id = data.gameDescription || mg.getUniqueId().toString();
+
+	localforage.setItem(id, data, function(err, value) {
+		// clear to empty state
+		$('#hostModalStatus').text('').removeClass('hidden text-danger text-success').fadeIn();
+
+		if(err) {
+			$('#hostModalStatus').text(err).addClass('text-danger').fadeOut(5000);
+		} else {
+			$('#hostModalStatus').text('Host settings saved.').addClass('text-success').fadeOut(5000);
+		}
+	});
+});
+
+
+$('#selectDb').on('change', function () {
+	var chosenDb = $(this).val();
+
+	if(chosenDb === null) return;
+
+	localforage.getItem(chosenDb, function (err, value) {
+		if(err) console.log("Error while retrieving saved data.");
+
+		$('#iServerName').val(value.serverName);
+		$('#iPort').val(value.port);
+		$('#iPlayerName').val(value.playerName);
+		$('#iPassword').val(value.password);
+		$('#iGame').val(value.gameDescription);
+
+		$('#openDbModalStatus').text("Loaded " + chosenDb + " settings.").removeClass('hidden').addClass('text-success').fadeIn().fadeOut(5000);
+	});
+
+});
+
+
+////////////////////////////////////////////////////////////////////////////////
+// main
+////////////////////////////////////////////////////////////////////////////////
+$(document).ready(function () {
+	// load saved data
+	localforage.keys(function (err, keys) {
+		if(err) console.log("Couldn't get localforage.keys(): ", err);
+
+		keys.forEach(function (key) {
+			$('#selectDb').append($('<option value="' + key + '">' + key + '</option>'));
+		});
+	});
+
 });
