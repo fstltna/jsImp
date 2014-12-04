@@ -117,6 +117,11 @@ $('#menuClearDisplay').on('click', function () {
 });
 
 
+$('#menuKeyboard').on('click', function () {
+	// toggle fTelnet keyboard visibility status
+	fTelnet.VirtualKeyboardVisible = (fTelnet.VirtualKeyboardVisible)? false : true;
+});
+
 // Configure menu
 $('#menuHost').on('click', function () {
 	console.log(this); // TODO remove this when this stub gets implemented
