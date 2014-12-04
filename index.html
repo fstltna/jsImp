@@ -76,11 +76,41 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">View <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#" id="menuMap">Map</a></li>
-								<li><a href="#" id="menuPlanet">Planet</a></li>
-								<li><a href="#" id="menuShip">Ship</a></li>
-								<li><a href="#" id="menuScripts">Scripts</a></li>
-								<li><a href="#" id="menuCommands">Commands</a></li>
+								<li>
+									<a href="#" id="menuMap"
+										data-window-target="#windowMap"
+										data-window-title="Map"
+										data-window-handle=".panel-heading"
+										data-title-handle=".panel-title">Map</a>
+								</li>
+								<li>
+									<a href="#" id="menuPlanet"
+										data-window-target="#windowPlanet"
+										data-window-title="Planet"
+										data-window-handle=".panel-heading"
+										data-title-handle=".panel-title">Planet</a>
+								</li>
+								<li>
+									<a href="#" id="menuShip"
+										data-window-target="#windowShip"
+										data-window-title="Ship"
+										data-window-handle=".panel-heading"
+										data-title-handle=".panel-title">Ship</a>
+								</li>
+								<li>
+									<a href="#" id="menuScripts"
+										data-window-target="#windowScripts"
+										data-window-title="Scripts"
+										data-window-handle=".panel-heading"
+										data-title-handle=".panel-title">Scripts</a>
+								</li>
+								<li>
+									<a href="#" id="menuCommands"
+										data-window-target="#windowCommands"
+										data-window-title="Commands"
+										data-window-handle=".panel-heading"
+										data-title-handle=".panel-title">Commands</a>
+								</li>
 								<li><a href="#" id="menuClearDisplay">Clear Display</a></li>
 							</ul>
 						</li>
@@ -140,7 +170,73 @@
 
 
 			<!-- View windows aren't modal, they need to be movable and resizeable -->
+			<div class="panel panel-primary" id="windowMap">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						Map
+						<button class="close" data-dismiss="window">x</button>
+					</h3>
+				</div>
 
+				<div class="panel-body">
+					<p>...</p>
+				</div>
+			</div>
+
+			<div class="panel panel-primary" id="windowPlanet">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						Planet
+						<button class="close" data-dismiss="window">x</button>
+					</h3>
+				</div>
+
+				<div class="panel-body">
+					<p>...</p>
+				</div>
+			</div>
+
+			<div class="panel panel-primary" id="windowShip">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						Ship
+						<button class="close" data-dismiss="window">x</button>
+					</h3>
+				</div>
+
+				<div class="panel-body">
+					<p>...</p>
+				</div>
+			</div>
+
+			<div class="panel panel-primary" id="windowScripts">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						Scripts
+						<button class="close" data-dismiss="window">x</button>
+					</h3>
+				</div>
+
+				<div class="panel-body">
+					<p>...</p>
+				</div>
+			</div>
+
+			<div class="panel panel-primary" id="windowCommands">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						Ship
+						<button class="close" data-dismiss="window">x</button>
+					</h3>
+				</div>
+
+				<div class="panel-body">
+					<p>...</p>
+				</div>
+			</div>
+			<!-- View windows ends -->
+
+			<!-- Configuration modals -->
 			<div class="modal fade" id="modalHost" role="dialog">
 				<div class="modal-dialog">
 					<div class="modal-content">
