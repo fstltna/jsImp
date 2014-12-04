@@ -1,6 +1,11 @@
 
 var mg = {}; // Marisa Giancarla namespace to avoid collisions
 
+mg.serverName = 'empiredirectory.net';
+mg.port = 4321;
+mg.playerName = '';
+mg.password = '';
+mg.gameDescription = '';
 
 mg.getUniqueId = function () {
 	var time = new Date().getTime();
@@ -22,9 +27,9 @@ mg.fTelnetSettings = function () {
 	fTelnet.Font = 'CP437';
 	fTelnet.Hostname = 'empiredirectory.net';
 	fTelnet.LocalEcho = true;
-	fTelnet.Port = 3458
-	fTelnet.ProxyHostname = 'empiredirectory.net';
-	fTelnet.ProxyPort = 4321;
+	fTelnet.Port = 3458;
+	fTelnet.ProxyHostname = mg.serverName;
+	fTelnet.ProxyPort = mg.port;
 //	fTelnet.ProxyPortSecure = 4321; // I think Marisa doesn't got this one configured
 	fTelnet.ScreenColumns = 80;
 	fTelnet.ScreenRows = 25;
