@@ -73,6 +73,9 @@ $('#menuDisconnect').on('click', function () {
 	$('#splashScreen').removeClass('hidden');
 
 	fTelnet.Disconnect();
+	// destroy and recreate fTelnet container or it will keep recreating all child elements
+	$('#fTelnetContainer').remove();
+	$('#mainStuff').append($('<div id="fTelnetContainer">'));
 });
 
 
