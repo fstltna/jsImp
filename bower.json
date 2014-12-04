@@ -22,6 +22,7 @@
     "howler.js": "https://github.com/goldfire/howler.js.git#~1.1.25",
     "howler": "~1.1.25",
     "fTelnet": "https://github.com/rickparrish/fTelnet.git",
-    "localforage": "~1.2.0"
+    "localforage": "~1.2.0",
+    "bootstrap-window": "~0.2.2"
   }
 }
