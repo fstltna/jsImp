@@ -7,11 +7,27 @@ mg.playerName = '';
 mg.password = '';
 mg.gameDescription = '';
 
+
 mg.getUniqueId = function () {
 	var time = new Date().getTime();
 	while(time === new Date().getTime());
 	return new Date().getTime();
 }
+
+
+mg.buildDbSelect = function () {
+	console.log('building db select');
+	// start clean
+	$('#selectDb').empty().append($('<option value="null">...</option>'));
+
+	localforage.keys(function (err, keys) {
+		if(err) console.log("Couldn't get localforage.keys(): ", err);
+
+		keys.forEach(function (key) {
+			$('#selectDb').append($('<option value="' + key + '">' + key + '</option>'));
+		});
+	});
+};
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -162,6 +178,7 @@ $('#submitHost').on('click', function (e) {
 			$('#hostModalStatus').text(err).addClass('text-danger').fadeOut(5000);
 		} else {
 			$('#hostModalStatus').text('Host settings saved.').addClass('text-success').fadeOut(5000);
+			mg.buildDbSelect()
 		}
 	});
 });
@@ -191,13 +208,5 @@ $('#selectDb').on('change', function () {
 // main
 ////////////////////////////////////////////////////////////////////////////////
 $(document).ready(function () {
-	// load saved data
-	localforage.keys(function (err, keys) {
-		if(err) console.log("Couldn't get localforage.keys(): ", err);
-
-		keys.forEach(function (key) {
-			$('#selectDb').append($('<option value="' + key + '">' + key + '</option>'));
-		});
-	});
-
+	mg.buildDbSelect();
 });
