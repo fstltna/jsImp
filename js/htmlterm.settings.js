@@ -73,7 +73,12 @@ $('#menuSaveDb').on('click', function () {
 });
 
 $('#menuNewDb').on('click', function () {
-	console.log(this); // TODO remove this when this stub gets implemented
+	// blank server settings
+	$('#iServerName').val('');
+	$('#iPort').val('');
+	$('#iPlayerName').val('');
+	$('#iPassword').val('');
+	$('#iGame').val('');
 });
 
 
