@@ -23,6 +23,6 @@
     "howler": "~1.1.25",
     "fTelnet": "https://github.com/rickparrish/fTelnet.git",
     "localforage": "~1.2.0",
-    "bootstrap-window": "~0.2.2"
+    "bootstrap-window": "~0.2.3-rc1"
   }
 }
