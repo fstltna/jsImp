@@ -1,7 +1,11 @@
 
 var mg = {}; // Marisa Giancarla namespace to avoid collisions
 
+// status variables
 mg.isConnected = false;
+mg.isDbOpen = false;
+
+// fTelnet defaults
 mg.serverName = 'empiredirectory.net';
 mg.port = 4321;
 mg.playerName = '';
@@ -62,15 +66,39 @@ mg.fTelnetSettings = function () {
 // File menu
 $('#menuOpenDb').on('click', function () {
 	console.log(this); // TODO remove this when this stub gets implemented
+
+	mg.isDbOpen = true;
+
+	// activate related menus
+	$('#menuCloseDb').removeClass('linkDisabled');
+	$('#menuSaveDb').removeClass('linkDisabled');
 });
 
-$('#menuCloseDb').on('click', function () {
+
+$('#menuCloseDb').on('click', function (e) {
+	if(! mg.isDbOpen) {
+		e.preventDefault();
+		return;
+
+	} else {
+		$(this).addClass('linkDisabled');
+		$('#menuSaveDb').addClass('linkDisabled');
+		mg.isDbOpen = false;
+	}
+
 	console.log(this); // TODO remove this when this stub gets implemented
 });
 
-$('#menuSaveDb').on('click', function () {
+
+$('#menuSaveDb').on('click', function (e) {
+	if(! mg.isDbOpen) {
+		e.preventDefault();
+		return;
+	}
+
 	console.log(this); // TODO remove this when this stub gets implemented
 });
+
 
 $('#menuNewDb').on('click', function () {
 	// blank server settings
