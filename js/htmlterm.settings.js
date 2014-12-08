@@ -1,6 +1,7 @@
 
 var mg = {}; // Marisa Giancarla namespace to avoid collisions
 
+mg.isConnected = false;
 mg.serverName = 'empiredirectory.net';
 mg.port = 4321;
 mg.playerName = '';
@@ -83,6 +84,10 @@ $('#menuNewDb').on('click', function () {
 
 // Server menu
 $('#menuConnect').on('click', function () {
+	// ensure we don't open several terminals
+	if(mg.isConnected) return;
+	else mg.isConnected = true;
+
 	// hide splash screen and show terminal emulator
 	$('#splashScreen').addClass('hidden');
 	$('#fTelnetContainer').removeClass('hidden');
@@ -108,6 +113,7 @@ $('#menuDisconnect').on('click', function () {
 	// destroy and recreate fTelnet container or it will keep recreating all child elements
 	$('#fTelnetContainer').remove();
 	$('#mainStuff').append($('<div id="fTelnetContainer">'));
+	mg.isConnected = false;
 });
 
 
