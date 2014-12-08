@@ -105,6 +105,10 @@ $('#menuConnect').on('click', function () {
 });
 
 $('#menuDisconnect').on('click', function () {
+	// don't do anything if we're not connected
+	if(! mg.isConnected) return;
+	else mg.isConnected = false;
+
 	// restore splash screen and hide terminal emulator
 	$('#fTelnetContainer').addClass('hidden');
 	$('#splashScreen').removeClass('hidden');
@@ -113,7 +117,6 @@ $('#menuDisconnect').on('click', function () {
 	// destroy and recreate fTelnet container or it will keep recreating all child elements
 	$('#fTelnetContainer').remove();
 	$('#mainStuff').append($('<div id="fTelnetContainer">'));
-	mg.isConnected = false;
 });
 
 
