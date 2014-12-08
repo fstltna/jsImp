@@ -88,6 +88,10 @@ $('#menuConnect').on('click', function () {
 	if(mg.isConnected) return;
 	else mg.isConnected = true;
 
+	// provide UI information about connection status
+	$(this).addClass('linkDisabled');
+	$('#menuDisconnect').removeClass('linkDisabled');
+
 	// hide splash screen and show terminal emulator
 	$('#splashScreen').addClass('hidden');
 	$('#fTelnetContainer').removeClass('hidden');
@@ -108,6 +112,10 @@ $('#menuDisconnect').on('click', function () {
 	// don't do anything if we're not connected
 	if(! mg.isConnected) return;
 	else mg.isConnected = false;
+
+	// provide UI information about connection status
+	$(this).addClass('linkDisabled');
+	$('#menuConnect').removeClass('linkDisabled');
 
 	// restore splash screen and hide terminal emulator
 	$('#fTelnetContainer').addClass('hidden');

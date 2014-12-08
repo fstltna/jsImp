@@ -6,3 +6,7 @@ body {
 	margin: 0 auto;
 	display: block;
 }
+
+.dropdown-menu > li > a.linkDisabled {
+	color: #555;
+}
