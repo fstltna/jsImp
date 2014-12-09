@@ -4,6 +4,12 @@ var mg = {}; // Marisa Giancarla namespace to avoid collisions
 // status variables
 mg.isConnected = false;
 mg.isDbOpen = false;
+mg.isWindowMapOpen = false;
+mg.isWindowPlanetOpen = false;
+mg.isWindowShipOpen = false;
+mg.isWindowScriptsOpen = false;
+mg.isWindowCommandsOpen = false;
+
 
 // fTelnet defaults
 mg.serverName = 'empiredirectory.net';
@@ -189,51 +195,91 @@ $('#menuDisconnect').on('click', function () {
 
 $('#menuMap').on('click', function (e) {
 	e.preventDefault();
-	mg.wm.createWindow({
-		title: "Map",
-		bodyContent: "<p>Put a map here...</p>",
-		footerContent: '<button type="button" class="btn btn-default btn-sm" data-dismiss="window">Close</button>'
-	});
+
+	if(mg.isWindowMapOpen) {
+		return; // do nothing, avoid creating a duplicate
+
+	} else {
+		mg.isWindowMapOpen = true;
+
+		mg.wm.createWindow({
+			title: "Map",
+			bodyContent: "<p>Put a map here...</p>",
+			footerContent: '<button type="button" class="btn btn-default btn-sm" data-dismiss="window" onclick="mg.isWindowMapOpen = false;">Close</button>'
+		});
+	}
 });
 
 
 $('#menuPlanet').on('click', function (e) {
 	e.preventDefault();
-	mg.wm.createWindow({
-		title: "Planet",
-		bodyContent: "<p>Put a planet here...</p>",
-		footerContent: '<button type="button" class="btn btn-default" data-dismiss="window">Close</button>'
-	});
+
+	if(mg.isWindowPlanetOpen) {
+		return; // do nothing, avoid creating a duplicate
+
+	} else {
+		mg.isWindowPlanetOpen = true;
+
+		mg.wm.createWindow({
+			title: "Planet",
+			bodyContent: "<p>Put a planet here...</p>",
+			footerContent: '<button type="button" class="btn btn-default btn-sm" data-dismiss="window" onclick="mg.isWindowPlanetOpen = false;">Close</button>'
+		});
+	}
 });
 
 
 $('#menuShip').on('click', function (e) {
 	e.preventDefault();
-	mg.wm.createWindow({
-		title: "Ship",
-		bodyContent: "<p>Put a ship here...</p>",
-		footerContent: '<button type="button" class="btn btn-default" data-dismiss="window">Close</button>'
-	});
+
+	if(mg.isWindowShipOpen) {
+		return; // do nothing, avoid creating a duplicate
+
+	} else {
+		mg.isWindowShipOpen = true;
+
+		mg.wm.createWindow({
+			title: "Ship",
+			bodyContent: "<p>Put a ship here...</p>",
+			footerContent: '<button type="button" class="btn btn-default btn-sm" data-dismiss="window" onclick="mg.isWindowShipOpen = false;">Close</button>'
+		});
+	}
 });
 
 
 $('#menuScripts').on('click', function (e) {
 	e.preventDefault();
-	mg.wm.createWindow({
-		title: "Scripts",
-		bodyContent: "<p>Put a script here...</p>",
-		footerContent: '<button type="button" class="btn btn-default" data-dismiss="window">Close</button>'
-	});
+
+	if(mg.isWindowScriptsOpen) {
+		return; // do nothing, avoid creating a duplicate
+
+	} else {
+		mg.isWindowScriptsOpen = true;
+
+		mg.wm.createWindow({
+			title: "Scripts",
+			bodyContent: "<p>Put a script here...</p>",
+			footerContent: '<button type="button" class="btn btn-default btn-sm" data-dismiss="window" onclick="mg.isWindowScriptsOpen = false;">Close</button>'
+		});
+	}
 });
 
 
 $('#menuCommands').on('click', function (e) {
 	e.preventDefault();
-	mg.wm.createWindow({
-		title: "Commands",
-		bodyContent: "<p>Put a command here...</p>",
-		footerContent: '<button type="button" class="btn btn-default" data-dismiss="window">Close</button>'
-	});
+
+	if(mg.isWindowCommandsOpen) {
+		return; // do nothing, avoid creating a duplicate
+
+	} else {
+		mg.isWindowCommandsOpen = true;
+
+		mg.wm.createWindow({
+			title: "Commands",
+			bodyContent: "<p>Put a command here...</p>",
+			footerContent: '<button type="button" class="btn btn-default btn-sm" data-dismiss="window" onclick="mg.isWindowCommandsOpen = false;">Close</button>'
+		});
+	}
 });
 
 
