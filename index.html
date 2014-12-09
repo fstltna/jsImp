@@ -76,46 +76,11 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-expanded="false" id="dropdownView">View <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li>
-									<a href="#" id="menuMap"
-										data-window-target="#windowMap"
-										data-window-title="Map"
-										data-window-handle=".panel-heading"
-										data-title-handle=".panel-title"
-										data-clone="true">Map</a>
-								</li>
-								<li>
-									<a href="#" id="menuPlanet"
-										data-window-target="#windowPlanet"
-										data-window-title="Planet"
-										data-window-handle=".panel-heading"
-										data-title-handle=".panel-title"
-										data-clone="true">Planet</a>
-								</li>
-								<li>
-									<a href="#" id="menuShip"
-										data-window-target="#windowShip"
-										data-window-title="Ship"
-										data-window-handle=".panel-heading"
-										data-title-handle=".panel-title"
-										data-clone="true">Ship</a>
-								</li>
-								<li>
-									<a href="#" id="menuScripts"
-										data-window-target="#windowScripts"
-										data-window-title="Scripts"
-										data-window-handle=".panel-heading"
-										data-title-handle=".panel-title"
-										data-clone="true">Scripts</a>
-								</li>
-								<li>
-									<a href="#" id="menuCommands"
-										data-window-target="#windowCommands"
-										data-window-title="Commands"
-										data-window-handle=".panel-heading"
-										data-title-handle=".panel-title"
-										data-clone="true">Commands</a>
-								</li>
+								<li><a href="#" id="menuMap">Map</a></li>
+								<li><a href="#" id="menuPlanet">Planet</a></li>
+								<li><a href="#" id="menuShip">Ship</a></li>
+								<li><a href="#" id="menuScripts">Scripts</a></li>
+								<li><a href="#" id="menuCommands">Commands</a></li>
 								<li><a href="#" id="menuClearDisplay">Clear Display</a></li>
 								<li><a href="#" id="menuKeyboard">Keyboard</a></li>
 							</ul>
@@ -172,72 +137,19 @@
 				</div>
 			</div>
 
+			<div id="viewWindows" class="window-pane"></div>
 
 			<!-- View windows aren't modal, they need to be movable and resizeable -->
-			<div class="panel panel-primary hidden" id="windowMap">
-				<div class="panel-heading">
-					<h3 class="panel-title">
-						Map
-						<button class="close" data-dismiss="window">x</button>
-					</h3>
+			<script type="template/text" id="window">
+				<div class="window">
+					<div class="window-header">
+						<button type="button" class="close" data-dismiss="window" aria-hidden="true">x</button>
+						<h4 class="window-title"></h4>
+					</div>
+					<div class="window-body"></div>
+					<div class="window-footer"></div>
 				</div>
-
-				<div class="panel-body">
-					<p>...</p>
-				</div>
-			</div>
-
-			<div class="panel panel-primary hidden" id="windowPlanet">
-				<div class="panel-heading">
-					<h3 class="panel-title">
-						Planet
-						<button class="close" data-dismiss="window">x</button>
-					</h3>
-				</div>
-
-				<div class="panel-body">
-					<p>...</p>
-				</div>
-			</div>
-
-			<div class="panel panel-primary hidden" id="windowShip">
-				<div class="panel-heading">
-					<h3 class="panel-title">
-						Ship
-						<button class="close" data-dismiss="window">x</button>
-					</h3>
-				</div>
-
-				<div class="panel-body">
-					<p>...</p>
-				</div>
-			</div>
-
-			<div class="panel panel-primary hidden" id="windowScripts">
-				<div class="panel-heading">
-					<h3 class="panel-title">
-						Scripts
-						<button class="close" data-dismiss="window">x</button>
-					</h3>
-				</div>
-
-				<div class="panel-body">
-					<p>...</p>
-				</div>
-			</div>
-
-			<div class="panel panel-primary hidden" id="windowCommands">
-				<div class="panel-heading">
-					<h3 class="panel-title">
-						Ship
-						<button class="close" data-dismiss="window">x</button>
-					</h3>
-				</div>
-
-				<div class="panel-body">
-					<p>...</p>
-				</div>
-			</div>
+			</script>
 			<!-- View windows ends -->
 
 			<!-- Configuration modals -->

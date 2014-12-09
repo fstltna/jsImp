@@ -187,26 +187,55 @@ $('#menuDisconnect').on('click', function () {
 });
 
 
-// View menu
-$('#menuMap').on('click', function () {
-	console.log(this); // TODO remove this when this stub gets implemented
+$('#menuMap').on('click', function (e) {
+	e.preventDefault();
+	mg.wm.createWindow({
+		title: "Map",
+		bodyContent: "<p>Put a map here...</p>",
+		footerContent: '<button type="button" class="btn btn-default btn-sm" data-dismiss="window">Close</button>'
+	});
 });
 
-$('#menuPlanet').on('click', function () {
-	console.log(this); // TODO remove this when this stub gets implemented
+
+$('#menuPlanet').on('click', function (e) {
+	e.preventDefault();
+	mg.wm.createWindow({
+		title: "Planet",
+		bodyContent: "<p>Put a planet here...</p>",
+		footerContent: '<button type="button" class="btn btn-default" data-dismiss="window">Close</button>'
+	});
 });
 
-$('#menuShip').on('click', function () {
-	console.log(this); // TODO remove this when this stub gets implemented
+
+$('#menuShip').on('click', function (e) {
+	e.preventDefault();
+	mg.wm.createWindow({
+		title: "Ship",
+		bodyContent: "<p>Put a ship here...</p>",
+		footerContent: '<button type="button" class="btn btn-default" data-dismiss="window">Close</button>'
+	});
 });
 
-$('#menuScripts').on('click', function () {
-	console.log(this); // TODO remove this when this stub gets implemented
+
+$('#menuScripts').on('click', function (e) {
+	e.preventDefault();
+	mg.wm.createWindow({
+		title: "Scripts",
+		bodyContent: "<p>Put a script here...</p>",
+		footerContent: '<button type="button" class="btn btn-default" data-dismiss="window">Close</button>'
+	});
 });
 
-$('#menuCommands').on('click', function () {
-	console.log(this); // TODO remove this when this stub gets implemented
+
+$('#menuCommands').on('click', function (e) {
+	e.preventDefault();
+	mg.wm.createWindow({
+		title: "Commands",
+		bodyContent: "<p>Put a command here...</p>",
+		footerContent: '<button type="button" class="btn btn-default" data-dismiss="window">Close</button>'
+	});
 });
+
 
 $('#menuClearDisplay').on('click', function () {
 	console.log(this); // TODO remove this when this stub gets implemented
@@ -231,10 +260,12 @@ $('#menuSettings').on('click', function () {
 // Help menu
 $('#menuIndex').on('click', function () {
 	console.log(this); // TODO remove this when this stub gets implemented
+	// modal window managed via TWBS data-toggle attribute
 });
 
 $('#menuAbout').on('click', function () {
 	console.log(this); // TODO remove this when this stub gets implemented
+	// modal window managed via TWBS data-toggle attribute
 });
 
 $('#submitHost').on('click', function (e) {
@@ -284,32 +315,15 @@ $('#selectDb').on('change', function () {
 });
 
 
-$('#menuMap').on('click', function () {
-	$('#windowMap').removeClass('hidden');
-});
-
-
-$('#menuPlanet').on('click', function () {
-	$('#windowPlanet').removeClass('hidden');
-});
-
-
-$('#menuShip').on('click', function () {
-	$('#windowShip').removeClass('hidden');
-});
-
-$('#menuScripts').on('click', function () {
-	$('#windowScripts').removeClass('hidden');
-});
-
-$('#menuCommands').on('click', function () {
-	$('#windowCommands').removeClass('hidden');
-});
-
-
 ////////////////////////////////////////////////////////////////////////////////
 // main
 ////////////////////////////////////////////////////////////////////////////////
 $(document).ready(function () {
 	mg.buildDbSelect();
+
+	// View menu
+	mg.wm = new WindowManager({
+		container: '#viewWindows',
+		windowTemplate: $('#window').html()
+	});
 });
