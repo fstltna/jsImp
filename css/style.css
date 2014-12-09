@@ -7,6 +7,6 @@ body {
 	display: block;
 }
 
-.dropdown-menu > li > a.linkDisabled {
+.dropdown-menu > li > a.disabled {
 	color: #555;
 }

@@ -63,6 +63,30 @@ mg.fTelnetSettings = function () {
 // Stubs for future functionality
 ////////////////////////////////////////////////////////////////////////////////
 
+// Don't let Server and View menu to work if no DB is open
+$('#dropdownServer').on('click', function (e) {
+	if(! mg.isDbOpen) {
+		e.preventDefault();
+		return;
+	}
+});
+
+
+$('#dropdownView').on('click', function (e) {
+	if(! mg.isDbOpen) {
+		e.preventDefault();
+		return;
+	}
+});
+
+
+$('#dropdownConfigure').on('click', function (e) {
+	if(! mg.isDbOpen) {
+		e.preventDefault();
+		return;
+	}
+});
+
 // File menu
 $('#menuOpenDb').on('click', function () {
 	console.log(this); // TODO remove this when this stub gets implemented
@@ -70,8 +94,11 @@ $('#menuOpenDb').on('click', function () {
 	mg.isDbOpen = true;
 
 	// activate related menus
-	$('#menuCloseDb').removeClass('linkDisabled');
-	$('#menuSaveDb').removeClass('linkDisabled');
+	$('#menuCloseDb').removeClass('disabled');
+	$('#menuSaveDb').removeClass('disabled');
+	$('#dropdownServer').removeClass('disabled');
+	$('#dropdownView').removeClass('disabled');
+	$('#dropdownConfigure').removeClass('disabled');
 });
 
 
@@ -81,8 +108,12 @@ $('#menuCloseDb').on('click', function (e) {
 		return;
 
 	} else {
-		$(this).addClass('linkDisabled');
-		$('#menuSaveDb').addClass('linkDisabled');
+		$(this).addClass('disabled');
+		$('#menuSaveDb').addClass('disabled');
+		$('#dropdownServer').addClass('disabled');
+		$('#dropdownView').addClass('disabled');
+		$('#dropdownConfigure').addClass('disabled');
+
 		mg.isDbOpen = false;
 	}
 
@@ -117,8 +148,8 @@ $('#menuConnect').on('click', function () {
 	else mg.isConnected = true;
 
 	// provide UI information about connection status
-	$(this).addClass('linkDisabled');
-	$('#menuDisconnect').removeClass('linkDisabled');
+	$(this).addClass('disabled');
+	$('#menuDisconnect').removeClass('disabled');
 
 	// hide splash screen and show terminal emulator
 	$('#splashScreen').addClass('hidden');
@@ -142,8 +173,8 @@ $('#menuDisconnect').on('click', function () {
 	else mg.isConnected = false;
 
 	// provide UI information about connection status
-	$(this).addClass('linkDisabled');
-	$('#menuConnect').removeClass('linkDisabled');
+	$(this).addClass('disabled');
+	$('#menuConnect').removeClass('disabled');
 
 	// restore splash screen and hide terminal emulator
 	$('#fTelnetContainer').addClass('hidden');
