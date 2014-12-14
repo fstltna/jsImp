@@ -364,5 +364,30 @@
 		<script src="bower_components/fTelnet/release/ftelnet.min.js" id="fTelnetScript"></script>
 		<script src="js/htmlterm.settings.js"></script>
 		<audio controls src="http://radio.opensimcity.org:8188/;.mp3"></audio>
-	</body>
+		<center><script type="text/javascript" src="http://ad.leadboltmobile.net/show_app_ad.js?section_id=811310328"></script></center>
+
+			<div id="smaatoad" style="padding: 0px"></div>
+			        <script type="text/javascript" src="http://soma.smaato.net/oapi/js/smaatoAdTag.js"></script>
+				        <script>
+
+            
+
+            function callBackForSmaato(status){
+		                    if(status == "SUCCESS"){
+					                        console.log('callBack is being called with status : ' + status);
+								                } else if (status == "ERROR"){
+											                    console.log('callBack is being called with status : ' + status);
+													                    }
+				                };
+            
+            SomaJS.loadAd({
+			                    adDivId : "smaatoad",
+					                    publisherId: 923884623,
+							                    adSpaceId: 65854860
+									                    
+									                },callBackForSmaato);
+    	
+    	</script>
+
+</body>
 </html>
