@@ -2,6 +2,10 @@ body {
 	padding-top: 70px;
 }
 
+img {
+	max-width: 100%;
+}
+
 .centeredImage {
 	margin: 0 auto;
 	display: block;
