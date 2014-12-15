@@ -137,12 +137,28 @@ $('#menuSaveDb').on('click', function (e) {
 
 
 $('#menuNewDb').on('click', function () {
+	// create a new empty DB
+	var data = {
+		serverName: '',
+		port: '',
+		playerName: '',
+		password: '',
+		gameDescription: mg.getUniqueId().toString()
+	};
+
 	// blank server settings
-	$('#iServerName').val('');
-	$('#iPort').val('');
-	$('#iPlayerName').val('');
-	$('#iPassword').val('');
-	$('#iGame').val('');
+	$('#iServerName').val(data.serverName);
+	$('#iPort').val(data.port);
+	$('#iPlayerName').val(data.playerName);
+	$('#iPassword').val(data.password);
+	$('#iGame').val(data.gameDescription);
+
+	localforage.setItem(data.gameDescription, data, function(err, value) {
+		if(err) console.log(err);
+
+		console.log("Empty DB created with ID: " + data.gameDescription);
+		mg.buildDbSelect(); // re-build File > Open DB select, it has changed
+	});
 });
 
 
