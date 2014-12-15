@@ -1,4 +1,3 @@
-
 var mg = {}; // Marisa Giancarla namespace to avoid collisions
 
 // status variables
@@ -16,7 +15,7 @@ mg.serverName = 'empiredirectory.net';
 mg.port = 4321;
 mg.playerName = '';
 mg.password = '';
-mg.gameDescription = '';
+mg.gameDescription = 'default';
 
 
 mg.getUniqueId = function () {
@@ -365,6 +364,33 @@ $('#selectDb').on('change', function () {
 // main
 ////////////////////////////////////////////////////////////////////////////////
 $(document).ready(function () {
+	// check if default DB is already created
+	localforage.getItem('default', function (err, value) {
+		if(err) console.log(err);
+
+		console.log("Trying to retrieve 'default' DB.");
+		if(null === value) {
+			// create a default DB on load when none exists
+			var data = {
+				serverName: mg.serverName,
+				port: mg.port,
+				playerName: mg.playerName,
+				password: mg.password,
+				gameDescription: mg.gameDescription
+			};
+
+			localforage.setItem(data.gameDescription, data, function(err, value) {
+				if(err) console.log(err);
+
+				console.log("'default' DB created.");
+				mg.buildDbSelect(); // re-build File > Open DB select, it has changed
+			});
+		}
+	});
+
+
+	// Since localforage works with promises, we cannot ensure _when_ will be called
+	// so let's get sure we build File > Open DB select once
 	mg.buildDbSelect();
 
 	// View menu
