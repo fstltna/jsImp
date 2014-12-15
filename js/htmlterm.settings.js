@@ -155,6 +155,10 @@ $('#menuConnect').on('click', function () {
 	$('#splashScreen').addClass('hidden');
 	$('#fTelnetContainer').removeClass('hidden');
 
+	fTelnet.ondata.on(function (data) {	// ZZZ Set this callback
+		    console.log("ondata callback: '" + data + "'");
+	});
+
 	if(! fTelnet.Init()) {
 		// If we get here, it means fTelnet failed to load, so we'll pop up an error message.
 		// The fTelnetContainer element above will also be replaced with an error message, so it's not totally
